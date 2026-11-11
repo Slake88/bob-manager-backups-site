@@ -1,6 +1,6 @@
 # Preparação e publicação — BOB Manager Backups
 
-Estado em 11-11-2026: MINUTA. Não publicar nem utilizar no OAuth antes de completar as confirmações.
+Estado em 11-11-2026: EM REVISÃO. A entidade, o contacto público e a finalidade institucional foram confirmados; não publicar nem utilizar no OAuth antes de completar as confirmações operacionais e jurídicas abaixo.
 Repositório autorizado: Slake88/bob-manager-backups-site. Base: main.
 Sem alterações ao BOB Manager, BOB TESTE, BOB REAL, Supabase ou outros repositórios.
 
@@ -12,23 +12,34 @@ Sem alterações ao BOB Manager, BOB TESTE, BOB REAL, Supabase ou outros reposit
 - Não foram incluídos segredos, tokens, backups, identificadores de projetos ou contas de Drive.
 - Não foi criado CNAME nem workflow de publicação automática. A ausência é deliberada.
 
-## Confirmações que bloqueiam a publicação
-1. Entidade responsável e contacto público de privacidade/apoio.
-2. Dados pessoais e técnicos incluídos nos backups e recebidos das APIs Google.
-3. Destinos de armazenamento (Drive e outros), acessos e destinatários/prestadores.
+## Informação confirmada
+- Responsável institucional indicada: BOBLEGACY – Associação Motociclista de Ação Solidária e Cultura Biker.
+- Contacto público confirmado: geral@blueonblack.pt.
+- Finalidade: cópias de segurança internas do BOB Manager para Google Drive, apenas no contexto dos Blue On Black.
+- Domínio previsto: backups.blueonblack.pt. Ainda não está associado nem publicado.
+
+## Confirmações que bloqueiam a publicação definitiva
+1. Categorias de dados pessoais e técnicos que entrarão efetivamente nos backups, e dados recebidos das APIs Google.
+2. Conta/pasta Drive de destino, quem terá acesso, partilhas, destinatários e prestadores envolvidos.
+3. Fundamento jurídico aplicável e processo para exercício de direitos; confirmar morada institucional e necessidade de contacto de DPO/representante.
 4. Retenção, rotação, versões/lixo, eliminação e tratamento após revogação.
-5. Local e proteção dos tokens e dos registos técnicos (descrever sem divulgar valores).
-6. Âmbitos pedidos efetivamente pelo código: apenas drive.file foi confirmado como escolhido na consola.
-7. Finalidade, fundamento aplicável, direitos, transferências e práticas Google/Limited Use.
-8. Termos operacionais e apoio. Não inventar garantias, inexistência de partilha ou cumprimento já verificado.
-Completar privacidade e termos e rever coerência com o funcionamento real antes de retirar avisos e noindex.
-Não usar o email do autor do commit como contacto público sem confirmação.
+5. Proteção, localização e ciclo de vida dos tokens e dos registos técnicos, sem divulgar valores.
+6. Confirmar os escopos efetivamente configurados e concedidos no cliente OAuth. O código consultado pede drive.file; o preflight apenas confirma que esse escopo aparece na resposta se o campo scope estiver presente, não prova exclusividade de escopos.
+7. Confirmar transferências, salvaguardas e práticas Google/Limited Use aplicáveis.
+8. Aprovar os termos operacionais e o canal de apoio. Não afirmar garantias, ausência de partilha ou controlos que não foram verificados.
+
+Os documentos permanecem em revisão e com noindex até estas confirmações e a correspondência com a operação real. O endereço de contacto foi fornecido expressamente para publicação; não foi inferido do autor do commit.
+
+## Implementação observada no código consultado
+- `tools/bob_real_drive_preflight.py` obtém um token através de refresh token Google, consulta metadados de uma pasta Drive de nome fixo e, se não a encontrar, pode criar uma pasta vazia.
+- O script não envia, descarrega, cifra, retém nem recupera cópias de segurança. Não foi encontrada chamada a esse script nos workflows examinados; a sua configuração e execução operacional não foram confirmadas.
+- Backups automáticos, cifragem, retenção e recuperação continuam previstos/não validados operacionalmente. Não descrever como funcionalidades disponíveis.
 
 ## Exigências Google verificadas
 - A política OAuth exige uma página inicial pública em domínio verificado, descrição da aplicação e ligações de privacidade e termos. Manter as três páginas solicitadas.
 - A política de privacidade deve estar acessível, no mesmo domínio da página inicial e representar os tratamentos reais.
-- drive.file é não sensível e limita o acesso a ficheiros criados pela app ou explicitamente abertos/partilhados com ela; não significa só escrita nem só backups.
-- O âmbito escolhido na consola deve corresponder ao pedido no código. A classificação não dispensa obrigações de privacidade nem resolve automaticamente a verificação de marca.
+- drive.file permite à aplicação criar ficheiros e aceder a ficheiros que criou ou que o utilizador abriu/partilhou com ela; não equivale a acesso geral ao Drive nem se limita a escrita. A descrição oficial não deve ser interpretada como prova da configuração efetiva deste cliente.
+- O âmbito configurado na consola e o consentimento efetivamente concedido têm de ser conferidos com o pedido no código. A classificação do âmbito não dispensa obrigações de privacidade nem resolve automaticamente a verificação de marca.
 - “Uso interno” descreve a utilização; não confirma elegibilidade para o tipo de público OAuth Internal. O histórico refere External/Testing; não foi alterado.
 - A Google exige projetos separados para testes e produção; BOB TESTE e BOB REAL separados não demonstram que os projetos/clientes OAuth também estão separados. Confirmar antes da produção.
 - A verificação Search Console de blueonblack.pt é informação fornecida pelo utilizador; confirmar a conta proprietária/editora associada ao projeto Google. Não alterar TXT.
@@ -92,3 +103,4 @@ Não mudar público, clientes, escopos ou tokens por efeito desta publicação.
 - https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 - https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
 - https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https
+- https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng/
