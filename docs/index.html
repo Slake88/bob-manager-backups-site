@@ -1,2 +1,71 @@
 <!doctype html>
-<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><meta name="description" content="Informação sobre a aplicação interna BOB Manager Backups e a integração com o Google Drive."><title>Apresentação · BOB Manager Backups</title><link rel="stylesheet" href="./assets/style.css"></head><body><a class="skip" href="#conteudo">Saltar para o conteúdo</a><header class="wrap"><a class="brand" href="./">BOB<span>Manager Backups</span></a><nav aria-label="Navegação principal"><a href="./" aria-current="page">Início</a><a href="./privacidade/">Privacidade</a><a href="./termos/">Termos</a></nav></header><main id="conteudo" class="wrap"><aside class="notice" aria-label="Estado do documento"><strong>Versão para revisão.</strong> Publicação e utilização no OAuth pendentes da confirmação das informações assinaladas.</aside><section class="hero"><p class="eyebrow">BOB MANAGER / GOOGLE DRIVE</p><h1>Backups internos.<br>Uma aplicação identificada.</h1><p class="lead">O BOB Manager Backups é uma aplicação interna destinada a realizar cópias de segurança do BOB Manager para o Google Drive, mediante autorização.</p><a class="button" href="./privacidade/">Consultar a privacidade <span aria-hidden="true">↗</span></a></section><section class="details" aria-labelledby="finalidade"><div><p class="eyebrow">01 / FINALIDADE</p><h2 id="finalidade">Informação pública.<br>Acesso reservado.</h2></div><div><p>Este site apresenta a aplicação e disponibiliza a informação de privacidade e os termos de utilização associados à autorização Google OAuth.</p><p>Os backups são internos e não estão acessíveis através deste site. Esta página não disponibiliza autenticação, carregamento ou descarga de backups.</p></div></section><section class="details" aria-labelledby="permissao"><div><p class="eyebrow">02 / AUTORIZAÇÃO</p><h2 id="permissao">Acesso limitado a ficheiros.</h2></div><div><p>O âmbito OAuth escolhido é <code>drive.file</code>. Permite criar ficheiros e aceder aos ficheiros criados pela aplicação ou que sejam explicitamente abertos ou partilhados com ela. Pode permitir consultar, alterar e eliminar esses ficheiros; não concede acesso geral a todo o Google Drive.</p><p>A autorização Google é distinta do acesso interno ao BOB Manager. Os ambientes BOB TESTE e BOB REAL são separados.</p><p class="pending">A confirmar antes da publicação: entidade responsável, contacto público e funcionamento efetivo do tratamento de dados.</p></div></section></main><footer class="wrap"><p>BOB Manager Backups · Aplicação de uso interno</p><p><a href="./privacidade/">Política de Privacidade</a> <span aria-hidden="true">/</span> <a href="./termos/">Termos de Serviço</a></p></footer></body></html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Informação para revisão sobre BOB Manager Backups, aplicação interna da BOBLEGACY para cópias de segurança no Google Drive.">
+  <title>Apresentação · BOB Manager Backups</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="wrap">
+    <a class="brand" href="./">BOB<span>Manager Backups</span></a>
+    <nav aria-label="Navegação principal">
+      <a href="./" aria-current="page">Início</a>
+      <a href="./privacidade/">Privacidade</a>
+      <a href="./termos/">Termos</a>
+    </nav>
+  </header>
+  <main id="conteudo" class="wrap">
+    <aside class="notice" aria-label="Estado do documento">
+      <strong>Versão para revisão.</strong>
+      Estes documentos não são definitivos. A publicação e a utilização no OAuth aguardam as confirmações assinaladas.
+    </aside>
+    <section class="hero">
+      <p class="eyebrow">BOB MANAGER / GOOGLE DRIVE</p>
+      <h1>Cópias internas.<br>Estado em preparação.</h1>
+      <p class="lead">BOB Manager Backups é a aplicação destinada a apoiar cópias de segurança internas do BOB Manager para o Google Drive, exclusivamente no contexto dos Blue On Black.</p>
+      <a class="button" href="./privacidade/">Consultar a privacidade <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="details" aria-labelledby="responsavel">
+      <div>
+        <p class="eyebrow">01 / RESPONSABILIDADE</p>
+        <h2 id="responsavel">Uma entidade identificada.</h2>
+      </div>
+      <div>
+        <p>Entidade responsável: <strong>BOBLEGACY – Associação Motociclista de Ação Solidária e Cultura Biker</strong>.</p>
+        <p>Contacto público: <a href="mailto:geral@blueonblack.pt">geral@blueonblack.pt</a>.</p>
+      </div>
+    </section>
+    <section class="details" aria-labelledby="estado">
+      <div>
+        <p class="eyebrow">02 / ESTADO</p>
+        <h2 id="estado">Pré-verificação não é backup.</h2>
+      </div>
+      <div>
+        <p>No código consultado existe um script de pré-verificação da ligação ao Google Drive. O script verifica a autorização, consulta metadados de uma pasta própria e cria uma pasta vazia se não a encontrar.</p>
+        <p>Esse script não transfere conteúdos de ficheiros nem executa cópias de segurança. Não foram validados operacionalmente backups automáticos, cifragem, retenção ou recuperação.</p>
+        <p>Este site apenas apresenta informação. Não disponibiliza autenticação, carregamento ou descarga de backups.</p>
+      </div>
+    </section>
+    <section class="details" aria-labelledby="permissao">
+      <div>
+        <p class="eyebrow">03 / AUTORIZAÇÃO GOOGLE</p>
+        <h2 id="permissao">Acesso limitado por ficheiro.</h2>
+      </div>
+      <div>
+        <p>O âmbito previsto no código de pré-verificação é <code>drive.file</code>. Segundo a <a href="https://developers.google.com/workspace/drive/api/guides/api-specific-auth">documentação da Google Drive API</a>, este âmbito permite criar ficheiros e aceder aos ficheiros que a aplicação criou ou que o utilizador abriu ou partilhou com ela. Pode permitir consultar, alterar e eliminar esses ficheiros; não concede acesso geral a todo o Google Drive.</p>
+        <p>A autorização Google é distinta da autenticação e das permissões internas do BOB Manager. O âmbito efetivamente concedido e a ausência de âmbitos adicionais ainda têm de ser confirmados.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <p>BOB Manager Backups · Aplicação de uso interno</p>
+    <p><strong>BOBLEGACY – Associação Motociclista de Ação Solidária e Cultura Biker</strong></p>
+    <p>Contacto público: <a href="mailto:geral@blueonblack.pt">geral@blueonblack.pt</a></p>
+    <p><a href="./privacidade/">Política de Privacidade</a> <span aria-hidden="true">/</span> <a href="./termos/">Termos de Serviço</a></p>
+  </footer>
+</body>
+</html>
